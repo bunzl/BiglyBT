@@ -1,13 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>biglybt-core</artifactId>
+	<artifactId>biglybt-core-android</artifactId>
 	<packaging>takari-jar</packaging>
-	<name>BiglyBT - Core</name>
+	<name>BiglyBT - Core (Android)</name>
 
 	<parent>
 		<groupId>com.biglybt</groupId>
-		<artifactId>biglybt-parent</artifactId>
+		<artifactId>biglybt-parent-android</artifactId>
 		<version>1.5.0.1-SNAPSHOT</version>
 	</parent>
 

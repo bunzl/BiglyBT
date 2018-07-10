@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.biglybt</groupId>
-	<artifactId>biglybt-parent</artifactId>
+	<artifactId>biglybt-parent-android</artifactId>
 	<version>1.5.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>BiglyBT - Parent</name>
+	<name>BiglyBT - Parent (Android)</name>
 
 	<url>http://www.biglybt.com</url>
 
