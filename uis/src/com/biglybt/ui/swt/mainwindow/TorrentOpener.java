@@ -717,7 +717,7 @@ public class TorrentOpener {
 						return;
 					}
 
-					if (torrentOptions.iQueueLocation == TorrentOpenOptions.QUEUELOCATION_TOP) {
+					if (torrentOptions.getQueueLocation() == TorrentOpenOptions.QUEUELOCATION_TOP) {
 						gm.moveTop(new DownloadManager[] {
 							dm
 						});
@@ -956,8 +956,7 @@ public class TorrentOpener {
 				}
 			}
 
-			TorrentOpenOptions torrentOptions = optionsToClone == null
-					? new TorrentOpenOptions() : new TorrentOpenOptions(optionsToClone);
+			TorrentOpenOptions torrentOptions = optionsToClone == null?new TorrentOpenOptions( null ) : optionsToClone.getClone();
 
 			File file = pathPrefix == null ? new File(line) : new File(pathPrefix,
 					line);

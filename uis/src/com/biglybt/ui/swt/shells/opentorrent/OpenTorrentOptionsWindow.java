@@ -216,11 +216,11 @@ public class OpenTorrentOptionsWindow
 						COConfigurationManager.setParameter( "User Mode", 2 );
 
 						if (torrent1 != null) {
-							addTorrent(	new TorrentOpenOptions(null, torrent1, false));
+							addTorrent(	new TorrentOpenOptions(null, torrent1, false, null));
 						}
 
 						if (torrent2 != null) {
-							addTorrent(	new TorrentOpenOptions(null, torrent2, false));
+							addTorrent(	new TorrentOpenOptions(null, torrent2, false, null));
 						}
 					}
 
@@ -3841,7 +3841,7 @@ public class OpenTorrentOptionsWindow
 		}
 
 		protected void setSelectedQueueLocation(int iLocation) {
-			torrentOptions.iQueueLocation = iLocation;
+			torrentOptions.setQueueLocation( iLocation );
 
 			updateStartOptionsHeader();
 		}
@@ -3859,7 +3859,7 @@ public class OpenTorrentOptionsWindow
 
 			String optionText = MessageText.getString(MSGKEY_STARTMODES[torrentOptions.getStartMode()])
 					+ ", "
-					+ MessageText.getString(MSGKEY_QUEUELOCATIONS[torrentOptions.iQueueLocation]);
+					+ MessageText.getString(MSGKEY_QUEUELOCATIONS[torrentOptions.getQueueLocation()]);
 
 			String s = MessageText.getString("OpenTorrentOptions.header.startoptions",
 					new String[] {
@@ -6279,7 +6279,7 @@ public class OpenTorrentOptionsWindow
 				sItemsText[i] = sText;
 			}
 			cmbQueueLocation.setItems(sItemsText);
-			cmbQueueLocation.select(torrentOptions.iQueueLocation);
+			cmbQueueLocation.select(torrentOptions.getQueueLocation());
 		}
 
 		private void updateSize() {

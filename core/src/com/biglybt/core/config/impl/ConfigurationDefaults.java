@@ -394,7 +394,8 @@ public class ConfigurationDefaults {
     def.put( "Show Timestamp For Alerts", FALSE);
     def.put( "Request Attention On New Download", TRUE );
     def.put( "Activate Window On External Download", TRUE );
-
+    def.put( "Add Torrent Queue Position", ONE );
+    
     def.put( "Insufficient Space Download Restart Enable", FALSE );
     def.put( "Insufficient Space Download Restart Period", 10 );
 
@@ -739,7 +740,8 @@ public class ConfigurationDefaults {
     def.put( "Show Options In Side Bar", FALSE );
     def.put( "Show New In Side Bar", TRUE );
     def.put( "Show Downloading In Side Bar", TRUE );
-
+    def.put( "Side Bar Close Position", ZERO );
+    
     def.put( "Share Ratio Progress Interval", 1000L );	// thousandths
 
     def.put( "installer.mode", "" );		// the type of the last installer used (see installer code for values)

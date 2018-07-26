@@ -2406,15 +2406,32 @@ DownloadManagerImpl
 
 			position = globalManager.getDownloadManagers().size() + 1;
 
-			if (COConfigurationManager.getBooleanParameter(CFG_MOVE_COMPLETED_TOP)) {
-
-				globalManager.moveTop(dms);
-
-			} else {
-
-				globalManager.moveEnd(dms);
+			if ( _assumedComplete ){
+				
+				if (COConfigurationManager.getBooleanParameter( CFG_MOVE_COMPLETED_TOP )){
+	
+					globalManager.moveTop(dms);
+	
+				} else {
+	
+					globalManager.moveEnd(dms);
+				}
+			}else{
+				
+					// moved back to downloading - use the open-torrent-options default to decide where to put the download
+					
+				int qp = COConfigurationManager.getIntParameter( "Add Torrent Queue Position", 1 );
+				
+				if ( qp == 0 ){
+					
+					globalManager.moveTop(dms);
+					
+				}else{
+					
+					globalManager.moveEnd(dms);
+				}
 			}
-
+			
 			// we left a gap in incomplete list, fixup
 
 			globalManager.fixUpDownloadManagerPositions();

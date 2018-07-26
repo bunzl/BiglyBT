@@ -325,7 +325,7 @@ public class TextViewerWindow {
   {
 	    Display display = Utils.getDisplay();
 
-	  	while ( shell.isVisible() && !shell.isDisposed()){
+	  	while ( (!shell.isDisposed()) && shell.isVisible()){
     		if (!display.readAndDispatch()) display.sleep();
 	  	}
   }
@@ -345,7 +345,13 @@ public class TextViewerWindow {
   {
 	  txtInfo.append( str );
 
-	  txtInfo.setSelection( txtInfo.getTextLimit());
+	  if ( str.contains( "\n" )){
+	  
+		  	// only scroll if the newly added text contains a new-line
+		  	// otherwise things get twitchy
+		  
+		  txtInfo.setSelection( txtInfo.getTextLimit());
+	  }
   }
 
   public boolean
