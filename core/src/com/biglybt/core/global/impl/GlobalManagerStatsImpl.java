@@ -280,17 +280,4 @@ GlobalManagerStatsImpl
 	{
 		return((long)(smoothed_receive_rate.getAverage()/current_smoothing_interval));
 	}
-
-	/* Default methods minSDK 24 */
-	public long
-	getTotalDataProtocolBytesReceived()
-	{
-		return(getTotalDataBytesReceived()+getTotalProtocolBytesReceived());
-	}
-	/* Default methods minSDK 24 */
-	public long
-	getTotalDataProtocolBytesSent()
-	{
-		return(getTotalDataBytesSent()+getTotalProtocolBytesSent());
-	}
 }
